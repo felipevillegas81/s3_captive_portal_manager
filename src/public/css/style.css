@@ -1,0 +1,143 @@
+/* === Estilo general de la app === */
+body {
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* === Login === */
+.login-card {
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card h2 {
+  color: #4e54c8;
+  font-weight: bold;
+}
+
+/* === Sidebar === */
+nav.bg-dark {
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+nav h4 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+nav .nav-link {
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+nav .nav-link:hover,
+nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* === Botón de logout en sidebar === */
+.btn-outline-light {
+  font-weight: bold;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === Main dashboard === */
+main {
+  padding: 30px;
+  background-color: #f8f9fa;
+}
+
+/* === Tarjetas === */
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.card h2 {
+  color: #343a40;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+/* === Sidebar base === */
+#sidebar {
+  width: 240px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1051;
+}
+
+/* === Overlay === */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1050;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* === Botón hamburguesa (solo móvil) === */
+#openSidebar {
+  display: none;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+  }
+
+  nav.bg-dark {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1051;
+  }
+
+  #sidebar.show-sidebar {
+    transform: translateX(0);
+  }
+
+  #openSidebar {
+    display: inline-block;
+  }
+
+  #closeSidebar {
+    display: block;
+  }
+}
